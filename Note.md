@@ -18,6 +18,6 @@ sudo apt update
 
 wget -qO- https://get.docker.com/ | sh
 
-sudo usermod -aG docker cube
+sudo usermod -aG docker $USER
 
 
