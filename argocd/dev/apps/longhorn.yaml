@@ -13,8 +13,6 @@ spec:
     path: argocd/dev/apps/longhorn
     repoURL: https://github.com/KLab-env/environment.git
     targetRevision: HEAD
-    directory:
-      recurse: false
   sources: []
   project: klab
   syncPolicy:
