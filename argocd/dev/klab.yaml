@@ -10,7 +10,7 @@ spec:
     name: in-cluster
     namespace: argocd
   source:
-    path: argocd/dev/apps/
+    path: argocd/dev/apps
     repoURL: https://github.com/KLab-env/environment.git
     targetRevision: HEAD
     directory:
