@@ -20,6 +20,8 @@ spec:
             value: "ClusterIP"
           - name: "ingress.enabled"
             value: "true"
+          - name: "ingress.ingressClassName"
+            value: "traefik"
           - name: "ingress.annotations"
             value: "kubernetes.io/ingress.class: traefik"
           - name: "ingress.hosts.host"
