@@ -29,7 +29,7 @@ spec:
         values: |
           ingress:
             hosts:
-              - host: portainer.klab.home
+              - host: "portainer.klab.home"
                 paths:
                   - path: /
 
