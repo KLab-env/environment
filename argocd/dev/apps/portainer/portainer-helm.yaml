@@ -29,9 +29,9 @@ spec:
         values: |
           ingress:
             hosts:
-              - host:
+              - host: portainer.klab.home
                 paths:
-                  - path: portainer.klab.home
+                  - path: /
 
   destination:
     server: https://kubernetes.default.svc
