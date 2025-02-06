@@ -14,8 +14,6 @@ spec:
       targetRevision: 1.0.59
       helm:
         parameters:
-          - name: "nodeSelector"
-            value: "worker"
           - name: "service.type"
             value: "ClusterIP"
           - name: "ingress.enabled"
