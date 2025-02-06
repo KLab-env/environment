@@ -16,15 +16,15 @@ spec:
         parameters:
           - name: "longhornUI.replicas"
             value: 1
-#        values: |
-#          ingress:
-#            enabled: true
-#            ingressClassName: traefik
-#            host: longhorn.klab.home
-#          preUpgradeChecker:
-#            jobEnabled: false
-#          longhornUI:
-#            replicas: 1
+          - name: "ingress.enabled"
+            value: true
+          - name: "ingress.host"
+            value: "longhorn.klab.home"
+          - name: "ingress.ingressClassName"
+            value: "traefik"
+        values: |
+          preUpgradeChecker:
+            jobEnabled: false
 
   destination:
     server: https://kubernetes.default.svc
