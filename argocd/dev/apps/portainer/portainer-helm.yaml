@@ -24,14 +24,16 @@ spec:
             value: "traefik"
           - name: "ingress.annotations"
             value: "kubernetes.io/ingress.class: traefik"
-          - name: "ingress.hosts.host"
-            value: "portainer.klab.home"
           - name: "persistence.enabled"
             value: "true"
           - name: "persistence.existingClaim"
             value: "portainer-pvc"
           - name: "persistence.storageClass"
             value: "longhorn"
+        values: |
+          ingress:
+            hosts:
+              - host: portainer.klab.home
 
   destination:
     server: https://kubernetes.default.svc
