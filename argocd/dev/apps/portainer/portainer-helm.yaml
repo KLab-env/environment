@@ -22,8 +22,6 @@ spec:
             value: "true"
           - name: "ingress.ingressClassName"
             value: "traefik"
-          - name: "ingress.annotations"
-            value: "kubernetes.io/ingress.class: traefik"
           - name: "persistence.enabled"
             value: "true"
           - name: "persistence.existingClaim"
