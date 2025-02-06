@@ -11,7 +11,7 @@ spec:
   sources:
     - chart: portainer
       repoURL: https://portainer.github.io/k8s/
-      targetRevision: portainer-1.0.59
+      targetRevision: 1.0.59
       helm:
         parameters:
           - name: "nodeSelector"
