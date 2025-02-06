@@ -30,12 +30,12 @@ spec:
             value: "portainer-pvc"
           - name: "persistence.storageClass"
             value: "longhorn"
-        values: |
-          ingress:
-            hosts:
-              - host: 
-                  paths:
-                    -path: portainer.klab.home
+#        values: |
+#          ingress:
+#            hosts:
+#              - host:
+#                  paths:
+#                    -path: portainer.klab.home
 
   destination:
     server: https://kubernetes.default.svc
