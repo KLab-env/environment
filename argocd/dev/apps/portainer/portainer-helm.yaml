@@ -11,7 +11,7 @@ spec:
   sources:
     - chart: portainer
       repoURL: https://portainer.github.io/k8s/
-      targetRevision: v1.8.0 # Replace with the Longhorn version you'd like to install or upgrade to
+      targetRevision: 2.21.5
       helm:
         parameters:
           - name: "nodeSelector"
