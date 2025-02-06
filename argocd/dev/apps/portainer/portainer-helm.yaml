@@ -9,7 +9,7 @@ spec:
       - CreateNamespace=true
   project: klab
   sources:
-    - chart: portainer/portainer
+    - chart: portainer
       repoURL: https://portainer.github.io/k8s/
       targetRevision: portainer-1.0.59
       helm:
