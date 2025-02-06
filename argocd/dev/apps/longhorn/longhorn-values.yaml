@@ -417,7 +417,7 @@ longhornDriver:
 
 longhornUI:
   # -- Replica count for Longhorn UI.
-  replicas: 2
+  replicas: 1
   # -- PriorityClass for Longhorn UI.
   priorityClass: *defaultPriorityClassNameRef
   # -- Toleration for Longhorn UI on nodes allowed to run Longhorn components.
