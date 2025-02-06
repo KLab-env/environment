@@ -13,9 +13,9 @@ spec:
       repoURL: https://charts.longhorn.io/
       targetRevision: v1.8.0 # Replace with the Longhorn version you'd like to install or upgrade to
       helm:
-        values: |
-          preUpgradeChecker:
-            jobEnabled: false
+        valueFiles:
+          - longhorn-values.yaml
+
   destination:
     server: https://kubernetes.default.svc
     namespace: longhorn-system
