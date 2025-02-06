@@ -15,16 +15,16 @@ spec:
       helm:
         parameters:
           - name: "longhornUI.replicas"
-            value: "1"
-        values: |
-          ingress:
-            enabled: true
-            ingressClassName: traefik
-            host: longhorn.klab.home
-          preUpgradeChecker:
-            jobEnabled: false
-          longhornUI:
-            replicas: 1
+            value: 1
+#        values: |
+#          ingress:
+#            enabled: true
+#            ingressClassName: traefik
+#            host: longhorn.klab.home
+#          preUpgradeChecker:
+#            jobEnabled: false
+#          longhornUI:
+#            replicas: 1
 
   destination:
     server: https://kubernetes.default.svc
