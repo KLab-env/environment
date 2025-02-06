@@ -13,9 +13,16 @@ spec:
       repoURL: https://charts.longhorn.io/
       targetRevision: v1.8.0 # Replace with the Longhorn version you'd like to install or upgrade to
       helm:
-        valueFiles:
-          - values.yaml
-        ignoreMissingValueFiles: true
+        values: |
+          ingress:
+            enabled: true
+            ingressClassName: traefik
+            host: longhorn.klab.home
+          preUpgradeChecker:
+            jobEnabled: false
+          longhornUI:
+            replicas: 1
+
   destination:
     server: https://kubernetes.default.svc
     namespace: longhorn-system
