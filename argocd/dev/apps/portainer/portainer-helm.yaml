@@ -31,7 +31,7 @@ spec:
             hosts:
               - host:
                 paths:
-                  -path: portainer.klab.home
+                  - path: portainer.klab.home
 
   destination:
     server: https://kubernetes.default.svc
