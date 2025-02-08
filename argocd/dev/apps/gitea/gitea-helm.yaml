@@ -26,6 +26,8 @@ spec:
             enabled: true
             claimName: gitea-pvc
           gitea:
+            metrics:
+              enabled: false
             APP_NAME: "Gitea: Klab"
             admin:
               username: klab
