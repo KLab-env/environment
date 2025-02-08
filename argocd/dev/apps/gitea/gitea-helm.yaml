@@ -40,7 +40,7 @@ spec:
                 NAME: gitea
                 USER: gitea
                 PASSWD: superpassword
-                SCHEMA: public
+                SCHEMA: gitea
           redis-cluster:
             enabled: false
           postgresql-ha:
