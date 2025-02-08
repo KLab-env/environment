@@ -36,7 +36,7 @@ spec:
             config:
               database:
                 DB_TYPE: postgres
-                HOST: 10.0.2.10:5432
+                HOST: postgres.klab.home:5432
                 NAME: gitea
                 USER: gitea
                 PASSWD: superpassword
