@@ -44,6 +44,8 @@ spec:
                 SCHEMA: public
               cache:
                 enable: false
+              server:
+                ROOT_URL: "http://git.klab.home"          
           service:
             http:
               type: ClusterIP
