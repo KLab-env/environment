@@ -34,7 +34,7 @@ spec:
               passwordMode: keepUpdated
             config:
               database:
-                DB_TYPE: mysql
+                DB_TYPE: postgres
                 HOST: "jdbc:postgresql://10.0.2.10:5432/gitea"
                 NAME: gitea
                 USER: gitea
