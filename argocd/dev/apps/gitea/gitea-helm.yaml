@@ -46,7 +46,8 @@ spec:
                 PASSWD: superpassword
                 SCHEMA: public
               cache:
-                enable: false
+                enable: true
+                ADAPTER: memory
               server:
                 ROOT_URL: "http://git.klab.home"          
           service:
