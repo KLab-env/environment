@@ -35,7 +35,7 @@ spec:
             config:
               database:
                 DB_TYPE: mysql
-                HOST: "jdbc:postgresql://10.0.2.10:5432/postgres"
+                HOST: "jdbc:postgresql://10.0.2.10:5432/gitea"
                 NAME: gitea
                 USER: gitea
                 PASSWD: superpassword
