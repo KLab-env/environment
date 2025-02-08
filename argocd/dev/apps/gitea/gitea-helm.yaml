@@ -25,7 +25,6 @@ spec:
           persistence:
             enabled: true
             claimName: gitea-pvc
-            size: 1Gi
           gitea:
             APP_NAME: "Gitea: Klab"
             admin:
@@ -41,6 +40,10 @@ spec:
                 USER: gitea
                 PASSWD: superpassword
                 SCHEMA: public
+              cache:
+                enable: false
+          redis:
+            enabled: false
           redis-cluster:
             enabled: false
           postgresql-ha:
