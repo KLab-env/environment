@@ -15,7 +15,7 @@ spec:
       helm:
         values: |
           ingress:
-            enabled: true
+            enabled: false
             className: traefik
             hosts:
               - host: git.klab.home
@@ -24,6 +24,7 @@ spec:
                     pathType: Prefix
           persistence:
             enabled: true
+            size: 1Gi
             claimName: gitea-pvc
           gitea:
             metrics:
