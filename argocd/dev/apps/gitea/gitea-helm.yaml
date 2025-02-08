@@ -40,13 +40,12 @@ spec:
                 USER: gitea
                 PASSWD: superpassword
                 SCHEMA: gitea
-
-        redis-cluster:
-          enabled: false
-        postgresql-ha:
-          enabled: false
-        postgresql:
-          enabled: false
+          redis-cluster:
+            enabled: false
+          postgresql-ha:
+            enabled: false
+          postgresql:
+            enabled: false
 
 
 
