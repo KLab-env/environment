@@ -22,26 +22,26 @@ spec:
                 paths:
                   - path: /
                     pathType: Prefix
-        persistence:
-          enabled: true
-          create: true
-          mount: true
-          claimName: gitea-pvc
-        gitea:
-          APP_NAME: "Gitea: Klab"
-          admin:
-            username: klab
-            password: superpassword
-            email: "klab@klab.home"
-            passwordMode: keepUpdated
-          config:
-            database:
-              DB_TYPE: mysql
-              HOST: "jdbc:postgresql://postgres.klab.home:5432/postgres"
-              NAME: gitea
-              USER: gitea
-              PASSWD: superpassword
-              SCHEMA: gitea
+          persistence:
+            enabled: true
+            create: true
+            mount: true
+            claimName: gitea-pvc
+          gitea:
+            APP_NAME: "Gitea: Klab"
+            admin:
+              username: klab
+              password: superpassword
+              email: "klab@klab.home"
+              passwordMode: keepUpdated
+            config:
+              database:
+                DB_TYPE: mysql
+                HOST: "jdbc:postgresql://postgres.klab.home:5432/postgres"
+                NAME: gitea
+                USER: gitea
+                PASSWD: superpassword
+                SCHEMA: gitea
 
         redis-cluster:
           enabled: false
