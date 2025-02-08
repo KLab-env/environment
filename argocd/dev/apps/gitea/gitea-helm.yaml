@@ -25,6 +25,7 @@ spec:
           persistence:
             enabled: true
             claimName: gitea-pvc
+            size: 1Gi
           gitea:
             APP_NAME: "Gitea: Klab"
             admin:
