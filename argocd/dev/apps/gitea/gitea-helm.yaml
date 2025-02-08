@@ -45,6 +45,10 @@ spec:
                 USER: gitea
                 PASSWD: superpassword
                 SCHEMA: public
+              session:
+                PROVIDER: memory
+              cache:
+                ADAPTER: memory          
               server:
                 ROOT_URL: "http://git.klab.home"          
           service:
