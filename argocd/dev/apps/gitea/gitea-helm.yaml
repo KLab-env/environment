@@ -1,0 +1,57 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitea
+  namespace: argocd
+spec:
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+  project: klab
+  sources:
+    - chart: gitea
+      repoURL: https://dl.gitea.com/charts/
+      targetRevision: 1.23.1
+      helm:
+        values: |
+          ingress:
+            enabled: true
+            className: traefik
+            hosts:
+              - host: git.klab.home
+                paths:
+                  - path: /
+                    pathType: Prefix
+        persistence:
+          enabled: true
+          create: true
+          mount: true
+          claimName: gitea-pvc
+        gitea:
+          APP_NAME: "Gitea: Klab"
+          admin:
+            username: klab
+            password: superpassword
+            email: "klab@klab.home"
+            passwordMode: keepUpdated
+          config:
+            database:
+              DB_TYPE: mysql
+              HOST: "jdbc:postgresql://postgres.klab.home:5432/postgres"
+              NAME: gitea
+              USER: gitea
+              PASSWD: superpassword
+              SCHEMA: gitea
+
+        redis-cluster:
+          enabled: false
+        postgresql-ha:
+          enabled: false
+        postgresql:
+          enabled: false
+
+
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: portainer
