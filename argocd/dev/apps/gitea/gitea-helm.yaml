@@ -45,9 +45,6 @@ spec:
                 USER: gitea
                 PASSWD: superpassword
                 SCHEMA: public
-              cache:
-                enable: true
-                ADAPTER: memory
               server:
                 ROOT_URL: "http://git.klab.home"          
           service:
@@ -60,7 +57,7 @@ spec:
               port: 1122
               clusterIP:
           redis:
-            enabled: false
+            enabled: true
           redis-cluster:
             enabled: false
           postgresql-ha:
