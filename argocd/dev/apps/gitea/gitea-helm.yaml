@@ -61,7 +61,7 @@ spec:
               port: 1122
               clusterIP:
           redis:
-            enabled: true
+            enabled: false
           redis-cluster:
             enabled: false
           postgresql-ha:
