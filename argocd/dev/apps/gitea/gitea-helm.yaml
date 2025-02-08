@@ -24,8 +24,6 @@ spec:
                     pathType: Prefix
           persistence:
             enabled: true
-            create: true
-            mount: true
             claimName: gitea-pvc
           gitea:
             APP_NAME: "Gitea: Klab"
