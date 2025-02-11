@@ -1,23 +1,30 @@
 # How to install PostgreSQL in docker
+    
 
+```
 services:
-db:
-container_name: postgres
-image: postgres:16.4
-environment:
-POSTGRES_USER: postgres
-POSTGRES_PASSWORD: postgres
-PGDATA: /opt/services/postgres/data
-POSTGRES_DB: bank
-volumes:
-- db:/opt/services/postgres/data
-ports:
-- "5332:5432"
-networks:
-- db
-restart: always
-healthcheck:
-test: [ "CMD-SHELL", "pg_isready -d postgres" ]
-interval: 30s
-timeout: 10s
-retries: 5
+  db:
+    container_name: postgres
+    image: postgres:16.4
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_DB: postgres
+    volumes:
+      - ./postgres/data:/var/lib/postgresql/data/pgdata
+      - ./postgres/init/:/docker-entrypoint-initdb.d/
+      - ./postgres/postgresql.conf:/etc/postgresql/postgresql.conf
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    restart: always
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -d postgres -U klab" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+
+```
