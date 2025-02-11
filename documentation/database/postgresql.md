@@ -1,21 +1,23 @@
 # How to install PostgreSQL in docker
 
-## Docker compose file
+## Service configuration
+
+### [docker-compose.yaml](../../services/docker-compose.yaml)
 
 ```
 services:
   db:
     container_name: postgres
-    image: postgres:16.4
+    image: postgres:16.4                                            # database replication works - checked 
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       PGDATA: /var/lib/postgresql/data/pgdata
       POSTGRES_DB: postgres
     volumes:
-      - ./postgres/data:/var/lib/postgresql/data/pgdata
-      - ./postgres/init/:/docker-entrypoint-initdb.d/
-      - ./postgres/postgresql.conf:/etc/postgresql/postgresql.conf
+      - ./postgres/data:/var/lib/postgresql/data/pgdata             # mount data folder
+      - ./postgres/init/:/docker-entrypoint-initdb.d/               # initial script for database
+      - ./postgres/postgresql.conf:/etc/postgresql/postgresql.conf  # database configuration
     ports:
       - "5432:5432"
     env_file:
@@ -31,4 +33,10 @@ services:
 ```
 
 > [!NOTE]
-> __.evn__ - file contain environment variables
+> __.evn__ - file contains environment variables
+
+
+### How to check connection
+
+> psql -U `<postgres user>` -h `<host>` -d postgres 
+
