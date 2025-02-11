@@ -1,0 +1,38 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: portainer
+  namespace: argocd
+spec:
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+  project: klab
+  sources:
+    - chart: portainer
+      repoURL: https://portainer.github.io/k8s/
+      targetRevision: 1.0.59
+      helm:
+        parameters:
+          - name: "service.type"
+            value: "ClusterIP"
+          - name: "ingress.enabled"
+            value: "true"
+          - name: "ingress.ingressClassName"
+            value: "traefik"
+          - name: "persistence.enabled"
+            value: "true"
+          - name: "persistence.existingClaim"
+            value: "portainer-pvc"
+          - name: "persistence.storageClass"
+            value: "longhorn"
+        values: |
+          ingress:
+            hosts:
+              - host: "portainer.klab.home"
+                paths:
+                  - path: /
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: portainer
