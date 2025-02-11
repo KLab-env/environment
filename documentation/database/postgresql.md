@@ -1,5 +1,6 @@
 # How to install PostgreSQL in docker
-    
+
+## Docker compose file
 
 ```
 services:
@@ -21,10 +22,13 @@ services:
       - .env
     restart: always
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -d postgres -U klab" ]
+      test: [ "CMD-SHELL", "pg_isready -d postgres -U ${POSTGRES_USER}" ]
       interval: 30s
       timeout: 10s
       retries: 5
 
 
 ```
+
+> [!NOTE]
+> __.evn__ - file contain environment variables
