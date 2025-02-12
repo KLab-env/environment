@@ -8,15 +8,16 @@ kubectl create namespace argocd
 ```
 
 OR
+<details>
+<summary>use argocd.namespace.yaml</summary>
 
-use argocd.namespace.yaml
 ```yaml
 apiVersion: v1
 kind: Namespace
 metadata:
-    name: gitea
+    name: argocd
 ```
-
+</details>
  
 
 ### Install ArgoCD into Kubernetes
