@@ -32,4 +32,3 @@ KLab environment initialization
 
 # TODO 
 add description for the project
-![img.png](img/logical-level.png)
